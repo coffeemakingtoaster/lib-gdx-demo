@@ -27,11 +27,13 @@ public class MyGdxGame extends Game {
 	Box2DDebugRenderer box2DDebugRenderer;
 	AssetManager assetManager;
 	private EnumMap<ScreenType, Screen> screenCache;
+	SpriteBatch spriteBatch;
 	
 	@Override
 	public void create () {
+		spriteBatch = new SpriteBatch();
 		gameCamera = new OrthographicCamera();
-		screenViewport = new FitViewport(1,1, gameCamera);
+		screenViewport = new FitViewport(1920, 1080, gameCamera);
 		assetManager = new AssetManager();
 		box2DDebugRenderer = new Box2DDebugRenderer();
 		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
@@ -76,6 +78,13 @@ public class MyGdxGame extends Game {
 
 	public World getWorld() {
 		return null;
+	}
+	public OrthographicCamera getGameCamera() {
+		return gameCamera;
+	}
+
+	public SpriteBatch getSpriteBatch() {
+		return spriteBatch;
 	}
 
 }

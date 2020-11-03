@@ -1,4 +1,4 @@
-package com.mygdx.game.Screen;
+package com.mygdx.game.screen;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.Gdx;
@@ -12,6 +12,7 @@ import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.mygdx.game.MyGdxGame;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 
@@ -19,7 +20,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 
 
 
-public class MainMenu implements Screen {
+public class MainMenu extends AbstractScreen {
     private SpriteBatch batch;
     protected Stage stage;
     private Viewport viewport;
@@ -27,7 +28,8 @@ public class MainMenu implements Screen {
     private TextureAtlas atlas;
     private Skin skin;
 
-    public MainMenu(){
+    public MainMenu(final MyGdxGame context){
+        super(context);
         //atlas = new TextureAtlas("skin.atlas"); 
         skin = new Skin(Gdx.files.internal("skins/glassy-ui.json"));
 
