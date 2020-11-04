@@ -30,12 +30,13 @@ public class MainMenu extends AbstractScreen {
 
     public MainMenu(final MyGdxGame context){
         super(context);
+        System.out.println("In main menu");
         //atlas = new TextureAtlas("skin.atlas"); 
         skin = new Skin(Gdx.files.internal("skins/glassy-ui.json"));
 
-        batch = new SpriteBatch();
-        camera = new OrthographicCamera();
-        viewport = new FitViewport(1920, 1080, camera);
+        batch = context.getSpriteBatch();
+        camera = context.getGameCamera();
+        viewport = context.getScreenViewport();
         viewport.apply();
 
         camera.position.set(camera.viewportWidth/2, camera.viewportHeight/2,0);
@@ -67,6 +68,7 @@ public class MainMenu extends AbstractScreen {
             @Override
             public boolean touchDown(InputEvent event,float x, float y,int pointer, int button){
                 System.out.println("Opening Settings");
+                context.setScreen(ScreenType.SETTINGS);
                 return true;
             }
         });
