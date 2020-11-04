@@ -14,6 +14,7 @@ import java.io.FileNotFoundException;
 
 public class Settings{
     private static final String MUSIC_VOLUME = "volume";
+    private float volume_value = 0;
 	private static final String MUSIC_ENABLED = "music.enabled";
 	private static final String SOUND_ENABLED = "sound.enabled";
 	private static final String SOUND_VOL = "sound";
@@ -48,7 +49,8 @@ public class Settings{
 	public void setMusicVolume(float volume) {
         System.out.println(volume);
 		getPrefs().putFloat(MUSIC_VOLUME, volume);
-		getPrefs().flush();
+        getPrefs().flush();
+        volume_value = volume;
 	}
 	
 	public float getSoundVolume() {
@@ -62,7 +64,7 @@ public class Settings{
     public void writeSettings(){
         System.out.println("writing Settings!");
         JSONObject settingToWrite = new JSONObject();
-        settingToWrite.put("MUSIC_VOLUME",MUSIC_VOLUME);
+        settingToWrite.put("MUSIC_VOLUME",volume_value);
         settingToWrite.put("MUSIC_ENABLED",MUSIC_ENABLED);
         settingToWrite.put("SOUND_ENABLED",SOUND_ENABLED);
         settingToWrite.put("SOUND_VOL",SOUND_VOL);
