@@ -1,2 +1,2 @@
 # libgdx-tests
-this serves as a dummy project and therefore will never really be finished nor is this meant to be played
+test project. Can be used as a sample on how to work with settings in libgdx
