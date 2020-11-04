@@ -18,6 +18,7 @@ import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.badlogic.gdx.utils.reflect.ClassReflection;
 import com.badlogic.gdx.utils.reflect.ReflectionException;
 import java.util.EnumMap;
+import com.mygdx.game.additional.Settings;
 
 
 public class MyGdxGame extends Game {
@@ -28,6 +29,8 @@ public class MyGdxGame extends Game {
 	AssetManager assetManager;
 	private EnumMap<ScreenType, Screen> screenCache;
 	SpriteBatch spriteBatch;
+	Settings settings;
+
 	
 	@Override
 	public void create () {
@@ -37,6 +40,7 @@ public class MyGdxGame extends Game {
 		assetManager = new AssetManager();
 		box2DDebugRenderer = new Box2DDebugRenderer();
 		screenCache = new EnumMap<ScreenType, Screen>(ScreenType.class);
+		settings = new Settings();
 		setScreen(ScreenType.MAINMENU);
 	}
 
@@ -87,4 +91,7 @@ public class MyGdxGame extends Game {
 		return spriteBatch;
 	}
 
+	public Settings getSettings(){
+		return settings;
+	}
 }
