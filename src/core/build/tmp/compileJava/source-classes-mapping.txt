@@ -1,11 +1,17 @@
+com/mygdx/game/screen/ScreenType.java
+ com.mygdx.game.screen.ScreenType
 com/mygdx/game/screen/MainMenu.java
  com.mygdx.game.screen.MainMenu
  com.mygdx.game.screen.MainMenu$1
  com.mygdx.game.screen.MainMenu$2
  com.mygdx.game.screen.MainMenu$3
+com/mygdx/game/screen/SettingsMenu.java
+ com.mygdx.game.screen.SettingsMenu
+ com.mygdx.game.screen.SettingsMenu$1
+ com.mygdx.game.screen.SettingsMenu$2
 com/mygdx/game/MyGdxGame.java
  com.mygdx.game.MyGdxGame
-com/mygdx/game/screen/ScreenType.java
- com.mygdx.game.screen.ScreenType
 com/mygdx/game/screen/AbstractScreen.java
  com.mygdx.game.screen.AbstractScreen
+com/mygdx/game/additional/Settings.java
+ com.mygdx.game.additional.Settings
